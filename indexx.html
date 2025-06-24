@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Assignment</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <style>
+      :root {
+      --main-color: #09014b;
+      --padding: 18px;
+    }
+    body{
+      font-family: "Tirong",serif;
+      font-size: 18px;
+    }
+header {
+  background-color: var(--main-color);
+  color: white;
+  padding: var(--padding);
+  position: sticky;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+  padding: var(--padding);
+}
+
+.left {
+  flex: 3;
+}
+
+.right {
+  flex: 1;
+}
+
+.box-model {
+  margin:15em 0 0 0;
+  padding: 20px;
+  border: 2px solid #333;
+  background-color: #f9f9f9;
+}
+.left img {
+  float: left;
+  width: 500px;
+  height: auto;
+  margin: 0 16px 8px 0;
+
+}
+
+.position {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  background-color: #c7d0ec;
+  padding: 10px;
+}
+.scroll-box {
+  width: 800px;
+  height: 80px;
+  border: 1px solid #000;
+  overflow: scroll;
+  background: #eee;
+  margin-top: 3%;
+}
+.transition {
+  background-color: #ddd;
+  padding: 20px;
+  transition: background-color 0.3s ease 0;
+}
+
+.transition:hover {
+  background-color: #4ba5dd;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    background-color: #a6cbe3
+  }
+}
+
+
+.animation{
+  animation: slide 3s ease-in-out forwards;
+  padding: 15px;
+  background-color: #e0ffe0;
+}
+
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+  }
+}
+.specific{
+  color: red;
+}
+div.specific{color: green;
+border: 1px solid rgb(250, 249, 249);}
+#specific {color: Blue;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+#flex{
+ display: flex;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hello!! Welcome to my Page..</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="left">
+      <h2>CSS Fundamentals in Action</h2>
+      <p>
+        <img src="CSS.jpg" alt="CSS fundamentals" />
+        Cascading Style Sheets (CSS) allow us to control how web pages look and feel. 
+        In this assignment, we explore the foundational elements including the box model, layout systems, positioning, transitions, and animations.
+        This image floats to the left to demonstrate wrapping text alongside media.
+      </p>
+
+      <div class="box-model">
+        This box will demonstrate margin, padding, and border.
+        It's essential to understand how these properties affect the spacing and structure of elements on the page.
+
+      </div>
+      <div id="flex">
+      <div class="scroll-box">This is a scroll div.
+         It helps in content management in small areas.Perfect for too long text, logs, code blocks,or data tables.
+         It improves layout and UX.Prevents your page from becoming too long or cluttered.
+         Keep the layout tidy.
+         You can style scrollable sections differently from the rest of your page. It is also very useful in responsive design of webpages.
+         As Scrolling helps avoid squeezing content too much. It also maintain readability without breaking layouts.
+         In CSS, scrolling is controlled using overflow properties such as overflow, overflow-x, and overflow-y, which define how content behaves when it exceeds its container. 
+         For instance, overflow: auto enables scrollbars only when needed, while overflow: scroll always shows them. 
+         Custom scroll behavior can be enhanced with scroll-behavior: smooth for seamless transitions, especially in single-page websites.
+          Additionally, pseudo-elements like ::-webkit-scrollbar allow styling scrollbars in supporting browsers. 
+          Developers often use position: sticky in conjunction with scrolling to create dynamic UI elements that follow the viewport. Mastering CSS scroll options greatly improves user navigation and interaction in responsive web design.
+
+</div>
+        <div class="specific" id="specific">Specifity-Test(This should be Blue.). 
+          As id has High Specifity rather than class and element.</div>
+          </div>
+      <div class="position">
+        This will demonstrate relative or absolute positioning.
+      </div>
+
+      <div class="transition">
+          Hover over this box to see a smooth background color change using CSS transitions.
+          Transitions add interactivity and polish.
+      </div>
+
+      <div class="animation">
+        This element will be animated with keyframes, demonstrating how CSS can bring life to static elements.
+      </div>
+    </section>
+
+    <aside class="right">
+      <h3>Did You Know?</h3>
+      <p>Flexbox is a layout model that offers a more efficient way to align and distribute space among items.
+         Media queries make your design responsive across devices.
+         Explore them below!
+</p>
+    </aside>
+</main>
+  <footer>
+    <p>&copy; 2025 Sandhya’s - CSS Assignment</p>
+  </footer>
+
+</body>
+</html>
